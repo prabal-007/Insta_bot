@@ -14,7 +14,6 @@ peak_likes_hourly=40, peak_likes_daily=400)
 session.end()
 
 
-
 from instapy import InstaPy
 
 session = InstaPy(username='d_coders_hub', password='technopass@crat', headless_browser=True)
