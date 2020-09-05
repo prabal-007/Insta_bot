@@ -19,10 +19,9 @@ from instapy import InstaPy
 
 session = InstaPy(username='d_coders_hub', password='technopass@crat', headless_browser=True)
 session.login()
-
 # session.set_smart_hashtags(['coding', 'programming','hacking'], limit=3, sort='top', log_tags=True)
-# session.like_by_tags(['pythonprogramming','coding','c++','c','javaprogramming'], amount=5)
-# session.set_dont_like(['nsfw','naked','snake'])
+session.like_by_tags(['pythonprogramming','coding','c++','c','javaprogramming'], amount=5)
+session.set_dont_like(['nsfw','naked','snake'])
 # session.set_smart_location_hashtags(['204517928/chicago-illinois', '213570652/nagoya-shi-aichi-japan'], radius=20, limit=10)
 session.like_by_locations(locations=['delhi','haryana'], amount=5, skip_top_posts=True)
 session.set_do_follow(True, percentage=30)
