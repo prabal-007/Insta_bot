@@ -2,8 +2,6 @@ from tkinter import *
 from instapy import InstaPy
 
 tag=None
-# loc1 = ['India']
-# loc2 = []
 list1 = ['business','akshaykumar','profit','dreams']
 list2=[]
 def advance():
@@ -28,17 +26,10 @@ def advance():
     list2 = str1.split(',')
     list1.extend(list2)
 
-    # str2 = loc.get('1.0','end')
-    # loc2 = str2.split(',')
-    # loc1.extend(loc2)
-
-
 def start():
     session = InstaPy(username=user.get(), password=passw.get(), headless_browser=True)
     session.login()
     
-    # session.set_smart_location_hashtags(loc1 , radius=15)
-    # session.set_smart_hashtags(list1)
     session.set_relationship_bounds(enabled=True, max_followers=1000, min_following=100)
     session.set_quota_supervisor(enabled=True, peak_comments_daily=250, peak_comments_hourly=20, peak_follows_daily=60, peak_follows_hourly=10,
     peak_likes_hourly=40, peak_likes_daily=500)
@@ -48,17 +39,12 @@ def start():
         session.like_by_tags(list1, amount=int(amt_like.get()), use_smart_hashtags=True)
         
     if comment.get() == 1:
-        # com = int(amt_comment.get())*10
         commen = ['Work from home - dm for more details',"Earn easily from home - dm to know more",'follw to get earning opportunties','wow']
-        # session.set_do_comment(enabled=True, percentage=25)
         session.set_comments(comments=commen, media=NONE)
         
     if follow.get() == 1:
         flo = int(amt_follow.get())
-        # session.set_do_follow(True, percentage=flo)
-        # session.follow_by_list(list1, times=2, interact=FALSE, sleep_delay=500)
         session.follow_by_tags(tags=list1, amount=flo, use_smart_hashtags=True, interact=False)
-        # session.set_do_follow(enabled=True, percentage=25, times=2)
 def vis():
     print('ok')
     v = (password['show']=='*')
