@@ -44,11 +44,35 @@ def start():
         # com = int(amt_comment.get())*10
         commen = ['Work from home - dm for more details',"Earn easily from home - dm to know more",'follw to get earning opportunties','wow']
         # session.set_do_comment(enabled=True, percentage=25)
-        session.set_comments(commen)
+        session.set_comments(comments=commen, media=NONE)
         
     if follow.get() == 1:
         flo = int(amt_follow.get())
-        session.follow_by_tags(list1, amount=flo, use_smart_hashtags=True)
+        # session.set_do_follow(True, percentage=flo)
+        # session.follow_by_list(list1, times=2, interact=FALSE, sleep_delay=500)
+        session.follow_by_tags(tags=list1, amount=flo, use_smart_hashtags=True, interact=False)
+        # session.set_do_follow(enabled=True, percentage=25, times=2)
+def vis():
+    print(password.config['show']=='*')
+    # print(v)
+    if password.config['show']=="*":
+        password.config(show=None)
+    else:
+        password.config(show='*')
+
+
+    # username.delete('1.0','end')
+    # username.update()
+    # password.delete('1.0','end')
+    # password.update()
+    
+
+    # x = tag.index('end')
+    # if x == 0:
+    #     print('ok working')
+    # else:
+    #     print(x)
+    # session.set_do_like(enabled=True, percentage=70)
 
 if __name__ == "__main__":
     root = Tk()
@@ -65,10 +89,13 @@ if __name__ == "__main__":
     f1.pack(pady=5)
 
     f2 = Frame(root,bg='orange')
-    Label(f2, text='Password',font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT)
+    Label(f2, text='Password',font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT,padx=17)
     passw = StringVar()
     password = Entry(f2, textvariable=passw, show='*',width=24)
-    password.pack(side=RIGHT,padx=18)
+    password.pack(side=LEFT,padx=1)
+    vi=PhotoImage(file='vis1.png')
+    vis = Button(f2,image=vi,command=vis,font='bold',width='10',height='10',relief=FLAT)
+    vis.pack(side=LEFT)
     f2.pack(pady=5)
 
     Label(root,text='Select Actions & Quantity',font='arial 10 bold',padx=5).pack()
