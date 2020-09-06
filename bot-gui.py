@@ -48,23 +48,7 @@ def start():
         
     if follow.get() == 1:
         flo = int(amt_follow.get())
-        # session.set_do_follow(True, percentage=flo)
-        # session.follow_by_list(list1, times=2, interact=FALSE, sleep_delay=500)
         session.follow_by_tags(list1, amount=flo, use_smart_hashtags=True)
-        # session.set_do_follow(enabled=True, percentage=25, times=2)
-
-    # username.delete('1.0','end')
-    # username.update()
-    # password.delete('1.0','end')
-    # password.update()
-    
-
-    # x = tag.index('end')
-    # if x == 0:
-    #     print('ok working')
-    # else:
-    #     print(x)
-    # session.set_do_like(enabled=True, percentage=70)
 
 if __name__ == "__main__":
     root = Tk()
