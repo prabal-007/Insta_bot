@@ -10,7 +10,6 @@ def advance():
     f5 = Frame(root,bg='orange')
 
     Label(f5,text='Add special Tags',font='arial 9 bold',padx='5',pady='5',bg='orange').pack(side=LEFT)
-    # tagVar=StringVar()
     tag = Text(f5,font='arial 9',width='30',height='2')
     tag.pack(side=RIGHT,pady=5)
     f5.pack()
