@@ -2,6 +2,8 @@ from tkinter import *
 from instapy import InstaPy
 
 tag=None
+# loc1 = ['India']
+# loc2 = []
 list1 = ['business','akshaykumar','profit','dreams']
 list2=[]
 def advance():
@@ -10,27 +12,33 @@ def advance():
     f5 = Frame(root,bg='orange')
 
     Label(f5,text='Add special Tags',font='arial 9 bold',padx='5',pady='5',bg='orange').pack(side=LEFT)
+    # tagVar=StringVar()
     tag = Text(f5,font='arial 9',width='30',height='2')
     tag.pack(side=RIGHT,pady=5)
     f5.pack()
     f6 = Frame(root,bg='orange')
-    
+
     Label(f6,text='Add Locations',font='arial 9 bold',padx='5',pady='5',bg='orange').pack(side=LEFT,padx=9)
-    loc = Text(f6,font='arial 10',width='30',height='2')
+    loc = Text(f6,font='arial 9',width='30',height='2')
     loc.pack(side=RIGHT,pady=5)
     f6.pack()
     adv.config(state=DISABLED)
     
-    str = tag.get('1.0','end')
-    list2 = str.split(',')
+    str1 = tag.get('1.0','end')
+    list2 = str1.split(',')
     list1.extend(list2)
 
-def start():
-    ur = user.get()
-    pas = passw.get()
-    session = InstaPy(username=ur, password=pas, headless_browser=True)
-    session.login()
+    # str2 = loc.get('1.0','end')
+    # loc2 = str2.split(',')
+    # loc1.extend(loc2)
 
+
+def start():
+    session = InstaPy(username=user.get(), password=passw.get(), headless_browser=True)
+    session.login()
+    
+    # session.set_smart_location_hashtags(loc1 , radius=15)
+    # session.set_smart_hashtags(list1)
     session.set_relationship_bounds(enabled=True, max_followers=1000, min_following=100)
     session.set_quota_supervisor(enabled=True, peak_comments_daily=250, peak_comments_hourly=20, peak_follows_daily=60, peak_follows_hourly=10,
     peak_likes_hourly=40, peak_likes_daily=500)
@@ -67,19 +75,19 @@ if __name__ == "__main__":
 
     Label(text='Instagram Bot',font='arial 20 bold',padx=10).pack(pady=20)
     f1 = Frame(root,bg='orange')
-    Label(f1,text='Username', font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT)
+    Label(f1,text='Username', font='arial 10 bold',padx='5',pady='5',bg='orange',width='9').pack(side=LEFT)
     user=StringVar()
     username = Entry(f1, textvariable=user, font='arial 10')
     username.pack(side=RIGHT,padx=10)
     f1.pack(pady=5)
 
     f2 = Frame(root,bg='orange')
-    Label(f2, text='Password',font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT,padx=17)
+    Label(f2, text='Password',font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT,padx=13)
     passw = StringVar()
     password = Entry(f2, textvariable=passw, show='*',width=24)
-    password.pack(side=LEFT,padx=1)
+    password.pack(side=LEFT)
     vi=PhotoImage(file='vis1.png')
-    vis = Button(f2,image=vi,command=vis,font='bold',width='10',height='10',relief=FLAT)
+    vis = Button(f2,image=vi,command=vis,font='bold',width='10',height='11',relief=FLAT)
     vis.pack(side=LEFT)
     f2.pack(pady=5)
 
@@ -94,9 +102,9 @@ if __name__ == "__main__":
     f3.pack()
 
     f4 = Frame(root,bg='orange')
-    amt_like = Spinbox(f4, from_=10, to_=450, width=5, relief=SUNKEN)
+    amt_like = Spinbox(f4, from_=1, to_=450, width=5, relief=SUNKEN)
     amt_like.pack(side=LEFT,padx=5)
-    amt_comment = Spinbox(f4, from_=5, to_=150, width=5, relief=SUNKEN)
+    amt_comment = Spinbox(f4, from_=1, to_=150, width=5, relief=SUNKEN)
     amt_comment.pack(side=LEFT,padx=50)
     amt_follow = Spinbox(f4, from_=1, to_=50, width=5, relief=SUNKEN)
     amt_follow.pack(side=LEFT)
