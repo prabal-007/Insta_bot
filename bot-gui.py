@@ -60,20 +60,6 @@ def vis():
     else:
         password.config(show='*')
 
-
-    # username.delete('1.0','end')
-    # username.update()
-    # password.delete('1.0','end')
-    # password.update()
-    
-
-    # x = tag.index('end')
-    # if x == 0:
-    #     print('ok working')
-    # else:
-    #     print(x)
-    # session.set_do_like(enabled=True, percentage=70)
-
 if __name__ == "__main__":
     root = Tk()
     root.title('Insta Bot')
