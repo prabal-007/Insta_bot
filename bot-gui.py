@@ -9,14 +9,14 @@ def advance():
     global list2,  list1
     f5 = Frame(root,bg='orange')
 
-    Label(f5,text='Add special Tags',font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT)
+    Label(f5,text='Add special Tags',font='arial 9 bold',padx='5',pady='5',bg='orange').pack(side=LEFT)
     # tagVar=StringVar()
-    tag = Text(f5,font='arial 10',width='30',height='2')
+    tag = Text(f5,font='arial 9',width='30',height='2')
     tag.pack(side=RIGHT,pady=5)
     f5.pack()
     f6 = Frame(root,bg='orange')
 
-    Label(f6,text='Add Locations',font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT,padx=9)
+    Label(f6,text='Add Locations',font='arial 9 bold',padx='5',pady='5',bg='orange').pack(side=LEFT,padx=9)
     loc = Text(f6,font='arial 10',width='30',height='2')
     loc.pack(side=RIGHT,pady=5)
     f6.pack()
@@ -53,10 +53,10 @@ def start():
         session.follow_by_tags(tags=list1, amount=flo, use_smart_hashtags=True, interact=False)
         # session.set_do_follow(enabled=True, percentage=25, times=2)
 def vis():
-    print(password.config['show']=='*')
-    # print(v)
-    if password.config['show']=="*":
-        password.config(show=None)
+    print('ok')
+    v = (password['show']=='*')
+    if v == TRUE:
+        password.config(show='')
     else:
         password.config(show='*')
 
