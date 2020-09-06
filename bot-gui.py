@@ -15,6 +15,7 @@ def advance():
     f5.pack()
     f6 = Frame(root,bg='orange')
 
+    
     Label(f6,text='Add Locations',font='arial 9 bold',padx='5',pady='5',bg='orange').pack(side=LEFT,padx=9)
     loc = Text(f6,font='arial 10',width='30',height='2')
     loc.pack(side=RIGHT,pady=5)
