@@ -1,10 +1,12 @@
 from tkinter import *
 from instapy import InstaPy
+
 tag=None
-list1 = []
+list1 = ['business','akshaykumar','profit','dreams']
+list2=[]
 def advance():
     global tag
-    global list1
+    global list2,  list1
     f5 = Frame(root,bg='orange')
 
     Label(f5,text='Add special Tags',font='arial 10 bold',padx='5',pady='5',bg='orange').pack(side=LEFT)
@@ -18,36 +20,44 @@ def advance():
     loc = Text(f6,font='arial 10',width='30',height='2')
     loc.pack(side=RIGHT,pady=5)
     f6.pack()
-
     adv.config(state=DISABLED)
+    
     str = tag.get('1.0','end')
-    list1 = str.split(',')
+    list2 = str.split(',')
+    list1.extend(list2)
 
 def start():
-    # ur = user.get()
-    # pas = passw.get()
-    session = InstaPy(username='d_coders_hub', password='technopass@crat', headless_browser=True)
+    ur = user.get()
+    pas = passw.get()
+    session = InstaPy(username=ur, password=pas, headless_browser=True)
     session.login()
+
+    session.set_relationship_bounds(enabled=True, max_followers=1000, min_following=100)
+    session.set_quota_supervisor(enabled=True, peak_comments_daily=250, peak_comments_hourly=20, peak_follows_daily=60, peak_follows_hourly=10,
+    peak_likes_hourly=40, peak_likes_daily=500)
+
     if like.get() == 1:
-        session.like_by_tags(list1, amount=int(amt_like.get()))
         session.set_dont_like(['nsfw','naked','snake'])
+        session.like_by_tags(list1, amount=int(amt_like.get()), use_smart_hashtags=True)
+        
     if comment.get() == 1:
         # com = int(amt_comment.get())*10
-        session.set_do_comment(enabled=True, percentage=25)
         commen = ['Work from home - dm for more details',"Earn easily from home - dm to know more",'follw to get earning opportunties','wow']
-        session.set_comments(comments=commen)
- 
+        # session.set_do_comment(enabled=True, percentage=25)
+        session.set_comments(commen)
+        
     if follow.get() == 1:
-        # flo = int(amt_follow.get())*10
+        flo = int(amt_follow.get())
         # session.set_do_follow(True, percentage=flo)
-        session.follow_by_tags(list1, amount=int(amt_follow.get()))
+        # session.follow_by_list(list1, times=2, interact=FALSE, sleep_delay=500)
+        session.follow_by_tags(list1, amount=flo, use_smart_hashtags=True)
+        # session.set_do_follow(enabled=True, percentage=25, times=2)
+
     # username.delete('1.0','end')
     # username.update()
     # password.delete('1.0','end')
     # password.update()
-    session.set_relationship_bounds(enabled=True, max_followers=1000, min_following=100)
-    session.set_quota_supervisor(enabled=True, peak_comments_daily=250, peak_comments_hourly=50, peak_follows_daily=60, peak_follows_hourly=10,
-    peak_likes_hourly=40, peak_likes_daily=500)
+    
 
     # x = tag.index('end')
     # if x == 0:
