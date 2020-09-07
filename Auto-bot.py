@@ -3,9 +3,9 @@ import schedule
 import time
 
 def job():
-    session = InstaPy(username='akshaygupta_17', password='Akshay@1725', headless_browser=True)
+    session = InstaPy(username=user, password=passw, headless_browser=True)
     try:
-        session = InstaPy(selenium_local_session=False) # Assuming running in Compose
+        session = InstaPy(selenium_local_session=False) 
         session.set_selenium_remote_session(selenium_url='http://selenium:4444/wd/hub')
         session.login()
         session.set_do_comment(enabled=True, percentage=20)
@@ -17,6 +17,22 @@ def job():
         import traceback
         print(traceback.format_exc())
 
+def basic():
+    global user, passw
+    user=input('Username  - ')
+    passw=input('Password - ')
+    print(f'searching https://www.instagram/{user}.......')
+    print('/..........')
+    time.sleep(3)
+    print('/..................')
+    time.sleep(5)
+    print('/.............................Working')
+    time.sleep(3)
+    print('..\nIn progress')
+
+user = ''
+passw = ''
+basic()
 schedule.every().day.at("06:35").do(job)
 schedule.every().day.at("16:22").do(job)
 
