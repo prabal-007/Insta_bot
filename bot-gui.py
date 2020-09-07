@@ -45,7 +45,7 @@ def hel():
     cont=Label(root2, text='Execute this instagram bot by following these\nsimple steps.\nStep-0. Enter your instagram username\nStep-1. Enter your instagram account password.\nstep-2. Select the actions(like, comment or shere) \nand thier quentity.\nStep-3. Click the advance options button to get advance\noptions like adding specail tags.\n\tstep-3.0. You an add special tags (to intract with\nspecifi community)\nstep-4. Click the start button to execute your insta bot.\nNOTE - Step-3 is optional.',
     font='arial 12 bold',padx='5',pady='10')
     cont.pack(pady='5',fill=X)
-    Button(root2,text='Exit',bg='gray',font='Arial 10 Bold',command=exi).pack()
+    Button(root2,text='Exit',bg='gray',font='Arial 10 bold',command=exi).pack()
     root2.mainloop()
 def About():
     root3=Tk()
@@ -59,7 +59,7 @@ def About():
     head.pack(pady='20')
     cont=Label(root3, text='Name - Insta BOT\nVersion - str.IB.0.2\nDeveloper - Prabal Gupta\ngithub - https://github.com/prabal-007', font='arial 12 bold',padx='5',pady='5')
     cont.pack(pady='20')
-    Button(root3,text='Exit',bg='gray',font='Arial 10 Bold',command=exi).pack()
+    Button(root3,text='Exit',bg='gray',font='Arial 10 bold',command=exi).pack()
     root3.mainloop()
 
 def start():
@@ -85,7 +85,6 @@ def start():
         session.follow_by_tags(tags=list1, amount=flo, use_smart_hashtags=True, interact=False)
 
 def vis():
-    print('ok')
     v = (password['show']=='*')
     if v == TRUE:
         password.config(show='')
