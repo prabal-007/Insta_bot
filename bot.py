@@ -1,6 +1,6 @@
 from instapy import InstaPy
 
-session = InstaPy(username='d_coders_hub', password='technopass@crat', headless_browser=True)
+session = InstaPy(username='username', password='password', headless_browser=True)
 session.login()
 
 session.like_by_tags(['pythonprogramming','coding'], amount=2)
