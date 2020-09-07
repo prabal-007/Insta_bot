@@ -6,7 +6,7 @@ def job():
     session = InstaPy(username=user, password=passw, headless_browser=True)
     try:
         session = InstaPy(selenium_local_session=False) 
-        session.set_selenium_remote_session(selenium_url='http://selenium:4444/wd/hub')
+        session.set_selenium_remote_session(selenium_url=r'http://selenium:4444//wd//hub')
         session.login()
         session.set_do_comment(enabled=True, percentage=20)
         session.set_comments(['Well done!'])
