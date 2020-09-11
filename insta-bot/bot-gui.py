@@ -42,7 +42,7 @@ def hel():
     root2.title("Insta BOT- Help")
     head=Label(root2, text=' HELP BOX ',bg='orange', font='arial 18 bold',underline=True)
     head.pack(pady='15')
-    cont=Label(root2, text='Execute this instagram bot by following these\nsimple steps.\nStep-0. Enter your instagram username\nStep-1. Enter your instagram account password.\nstep-2. Select the actions(like, comment or shere) \nand thier quentity.\nStep-3. Click the advance options button to get advance\noptions like adding specail tags.\n\tstep-3.0. You an add special tags (to intract with\nspecifi community)\nstep-4. Click the start button to execute your insta bot.\nNOTE - Step-3 is optional.',
+    cont=Label(root2, text='Execute this instagram bot by following these\nsimple steps.\nStep-0. Enter your instagram username\nStep-1. Enter your instagram account password.\nstep-2. Select the actions(like, comment or shere) \nand thier quentity.\nStep-3. Click the advance options button to get advance\noptions like adding specail tags.\n\tstep-3.0. You an add special tags (to intract with\nspecific community)\nstep-4. Click the start button to execute your insta bot.\nNOTE - Step-3 is optional.')
     font='arial 12 bold',padx='5',pady='10')
     cont.pack(pady='5',fill=X)
     Button(root2,text='Exit',bg='gray',font='Arial 10 bold',command=exi).pack()
