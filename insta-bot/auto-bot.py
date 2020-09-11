@@ -3,7 +3,7 @@ import schedule
 import time
 
 def job():
-    session = InstaPy(username=user, password=passw, headless_browser=True)
+    session = InstaPy(username='username', password='password', headless_browser=True)
     try:
         session = InstaPy(selenium_local_session=False) 
         session.set_selenium_remote_session(selenium_url=r'http://selenium:4444//wd//hub')
