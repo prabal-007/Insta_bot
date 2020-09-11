@@ -22,9 +22,6 @@ class HomePage:
         sleep(2)
         return LoginPage(self.browser)
 
-
-
-
 def test_login_page(browser):
     home_page = HomePage(browser)
     login_page = home_page.go_to_login_page()
