@@ -1,6 +1,6 @@
 from instapy import InstaPy
 
-session = InstaPy(username='d_coders_hub', password='technopass@crat', headless_browser=True)
+session = InstaPy(username='username', password='password', headless_browser=True)
 session.login()
 
 # session.set_smart_hashtags(['coding', 'programming','hacking'], limit=3, sort='top', log_tags=True)
