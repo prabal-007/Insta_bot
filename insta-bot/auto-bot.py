@@ -16,7 +16,6 @@ def job():
     except Exception as e:
         import traceback
         print(traceback.format_exc())
-
         
 def basic():
     global user, passw
